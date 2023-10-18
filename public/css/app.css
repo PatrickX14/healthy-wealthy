@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+.container-fluid img {
+    margin-left: 20px;
+}
+
+.customListMenu {
+    margin-left: 60px;
+}
+
+.customInputForm {
+    margin-right: 80px;
+}
+
+.customInput {
+    width: 300px;
+}
+
+.customLoginBT {
+    color: black;
+    font-size: 26px;
+}
+
+.logo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.mainContentHeader {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.subContentHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    margin: 60px 15px 30px 15px;
+}
+
+.card {
+    margin-bottom: 14px;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.fa-fire {
+    font-size: 12px;
+}
+
+.aboutHeader {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.aboutHeader img {
+    width: 400px;
+}
+
+.aboutHeader h5 {
+    margin-top: 20px;
+}
+
+.aboutBody {
+    margin: 30px 20% 30px 20%;
+}
+
+.calCulator {
+    margin: 5% 36% 0 36%;
+}
+
+.calCulatorForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.calCulatorForm label {
+    margin-top: 10px;
+}
+
+.calCulatorForm input {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.calCulatorForm input[type="button"] {
+    margin-top: 14px;
+}
+
+label[for="gender"],
+label[for="weight"],
+label[for="height"],
+label[for="age"],
+label[for="output"] {
+    font-size: 20px;
+}
+
+.calculatorError {
+    color: #fc2d32;
+}
+
+#weightError,
+#heightError,
+#ageError {
+    display: none;
+}
+
+.genderSelector {
+    border: 1px solid black;
+}
+
+.calculateButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.customCardContainer {
+    margin: 30px 15% 30px 15%;
+}
+
+.customCardContainer .col a {
+    text-decoration: none;
+}
+
+.customCardContainer .col a .card:hover {
+    border: 1.5px solid #618c03;
+    transition: 0.5s;
+}
+
+.lineLink {
+    position: fixed;
+    z-index: 1;
+    font-size: 48px;
+    right: 30px;
+    bottom: 30px;
+}
