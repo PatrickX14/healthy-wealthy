@@ -38,9 +38,11 @@ Route::get('/bllod_pressure3', [PageController::class, 'bllod_pressure3']);
 Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
 Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
 Route::get('/calculator', [PageController::class, 'calculator']);
-Route::get('/foodshow', [PageController::class, 'foodshow']);
 
-Route::get('/foodupload', [FoodController::class, 'index']);
+Route::get('/foodshow', [FoodController::class, 'index'])->name('food.show');
+Route::post('/foodupload', [FoodController::class, 'store'])->name('food.upload');
+
+
 
 Route::get('/oldindex', function () {
     return view('oldindex');
@@ -48,6 +50,7 @@ Route::get('/oldindex', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/foodupload', [FoodController::class, 'create']);
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

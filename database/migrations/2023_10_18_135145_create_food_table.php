@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('foodname');
             $table->string('foodkcal');
             $table->string('foodcategory');
-            $table->json('foodingr');
-            $table->json('foodrecipe');
+            $table->longText('foodingr');
+            $table->longText('foodrecipe');
             $table->string('video');
             $table->string('picture');
             $table->string('refer');

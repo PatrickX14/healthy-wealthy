@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Food;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class FoodController extends Controller
 {
@@ -11,7 +13,8 @@ class FoodController extends Controller
      */
     public function index()
     {
-        return view('foodupload');
+        $foods = Food::all();
+        return view('foodshow')->with('foods', $foods);
     }
 
     /**
@@ -19,7 +22,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('foodupload');
     }
 
     /**
@@ -27,7 +30,40 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'foodname' => 'required',
+            'foodkcal' => 'required',
+            'foodcategory' => 'required',
+            'foodingr' => 'required',
+            'foodrecipe' => 'required',
+            'video' => 'required',
+            'picture' => 'required',
+            'refer' => 'required'
+        ], [
+            'foodname.required' => 'โปรดระบุชื่ออาหาร',
+            'foodkcal.required' => 'โปรดระบุปริมาณแคลอรี่',
+            'foodcategory.required' => 'โปรดเลือกประเภทอาหาร',
+            'foodingr.required' => 'โปรดระบุขั้นตอนการทำอาหาร',
+            'foodrecipe.required' => 'โปรดเลือกประเภทอาหาร',
+            'video.required' => 'โปรดเลือกประเภทอาหาร',
+            'picture.required' => 'โปรดเลือกประเภทอาหาร',
+            'refer.required' => 'โปรดเลือกประเภทอาหาร'
+        ]);
+
+        $upload = Food::create([
+            'foodname' => $request->foodname,
+            'foodkcal' => $request->foodkcal,
+            'foodcategory' => $request->foodcategory,
+            'foodingr' => $request->foodingr,
+            'foodrecipe' => $request->foodrecipe,
+            'video' => $request->video,
+            'picture' => $request->picture,
+            'refer' => $request->refer
+        ]);
+        if(!$upload) {
+            return;
+        }
+        return redirect('/');
     }
 
     /**

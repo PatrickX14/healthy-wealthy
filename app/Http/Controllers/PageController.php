@@ -26,13 +26,6 @@ class PageController extends Controller
         return view('disease/obesity_food2');
     }
     public function calculator() {
-        return view('calculator', [
-            'name' => 'James',
-            'lastName' => 'Davis'
-        ]);
-    }
-    
-    public function foodshow() {
-        return view('foodshow');
+        return view('calculator');
     }
 }
