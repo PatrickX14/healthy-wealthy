@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/user/{id}', function (string $id) {
+    return 'User '.$id;
+});
+
 Route::get('/name', function () {
     $Name = DB::table('users')->pluck('email');
     return view('greeting', [
@@ -39,7 +43,8 @@ Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
 Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
 Route::get('/calculator', [PageController::class, 'calculator']);
 
-Route::get('/foodshow', [FoodController::class, 'index'])->name('food.show');
+Route::get('/foodshow', [FoodController::class, 'index'])
+    ->name('food.show');
 Route::post('/foodupload', [FoodController::class, 'store'])->name('food.upload');
 
 
@@ -55,4 +60,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

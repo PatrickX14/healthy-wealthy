@@ -22,7 +22,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return view('foodupload');
+        return view('food/foodupload');
     }
 
     /**
@@ -34,35 +34,43 @@ class FoodController extends Controller
             'foodname' => 'required',
             'foodkcal' => 'required',
             'foodcategory' => 'required',
+            'disease' => 'required',
             'foodingr' => 'required',
             'foodrecipe' => 'required',
             'video' => 'required',
-            'picture' => 'required',
+            'picture' => 'nullable',
             'refer' => 'required'
         ], [
             'foodname.required' => 'โปรดระบุชื่ออาหาร',
             'foodkcal.required' => 'โปรดระบุปริมาณแคลอรี่',
-            'foodcategory.required' => 'โปรดเลือกประเภทอาหาร',
+            'foodcategory.required' => 'โปรดเลือกหมวดหมู่',
+            'disease.required' => 'โปรดเลือกโรค',
             'foodingr.required' => 'โปรดระบุขั้นตอนการทำอาหาร',
             'foodrecipe.required' => 'โปรดเลือกประเภทอาหาร',
-            'video.required' => 'โปรดเลือกประเภทอาหาร',
-            'picture.required' => 'โปรดเลือกประเภทอาหาร',
-            'refer.required' => 'โปรดเลือกประเภทอาหาร'
+            'video.required' => 'โปรดเพิ่มวิดีโอ',
+            'picture.required' => 'โปรดเพิ่มรูป',
+            'refer.required' => 'โปรดระบุแหล่งอ้างอิง'
         ]);
+
+        $filename = $request->file('picture')->getClientOriginalName();
+        $request->file('picture')->storeAs('image', $filename, 'public');
 
         $upload = Food::create([
             'foodname' => $request->foodname,
             'foodkcal' => $request->foodkcal,
             'foodcategory' => $request->foodcategory,
+            'disease' => $request->disease,
             'foodingr' => $request->foodingr,
             'foodrecipe' => $request->foodrecipe,
             'video' => $request->video,
-            'picture' => $request->picture,
+            'picture' => $request->picture->getClientOriginalName(),
             'refer' => $request->refer
         ]);
-        if(!$upload) {
-            return;
-        }
+        // if(!$request->hasFile('picture')) {
+        //     echo 'no file uploaded';
+        // }else {
+        //     echo 'file uploaded';
+        // }
         return redirect('/');
     }
 
@@ -71,7 +79,8 @@ class FoodController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $foods = Food::find($id);
+        return view('food/foodshow')->with('foods', $foods);
     }
 
     /**
