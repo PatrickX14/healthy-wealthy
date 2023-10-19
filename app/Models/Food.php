@@ -14,6 +14,7 @@ class Food extends Model
         'foodname',
         'foodkcal',
         'foodcategory',
+        'disease',
         'foodingr',
         'foodrecipe',
         'video',

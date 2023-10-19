@@ -11,20 +11,30 @@
                         <span class="text-danger fs-6">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <label class="h-100 w-100" for="">ปริมาณแคลอรี่</label>
                     <input class="h-100 w-100 form-control" type="number" name="foodkcal">
                     @error('foodkcal')
                         <span class="text-danger fs-6">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="col-6">
-                    <label class="h-100 w-100" for="">ประเภทอาหาร</label>
+                <div class="col-4">
+                    <label class="h-100 w-100" for="">หมวดหมู่</label>
                     <select class="form-select" aria-label="Default select example" name="foodcategory">
-                        <option selected disabled>เลือกประเภทอาหาร</option>
-                        <option value="ของทอด">ของทอด</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected disabled>เลือกหมวดหมู่อาหาร</option>
+                        <option value="edible">กินได้</option>
+                        <option value="inedible">กินไม่ได้</option>
+                    </select>
+                    @error('foodcategory')
+                        <span class="text-danger fs-6">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="col-4">
+                    <label class="h-100 w-100" for="">โรค</label>
+                    <select class="form-select" aria-label="Default select example" name="foodcategory">
+                        <option selected disabled>เลือกโรค</option>
+                        <option value="ของทอด">โรคอ้วน</option>
+                        <option value="ของทอด">โรคเบาหวาน</option>
                     </select>
                     @error('foodcategory')
                         <span class="text-danger fs-6">{{ $message }}</span>

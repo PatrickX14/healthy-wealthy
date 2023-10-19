@@ -16,11 +16,12 @@ return new class extends Migration
             $table->string('foodname');
             $table->string('foodkcal');
             $table->string('foodcategory');
+            $table->string('disease')->uniqid();
             $table->longText('foodingr');
             $table->longText('foodrecipe');
             $table->string('video');
             $table->string('picture');
-            $table->string('refer');
+            $table->string('refer')->nullable();
             $table->timestamps();
         });
     }
