@@ -33,19 +33,19 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light link-secondary" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            โรคในผู้สูงอายุ
+                            อาหารสำหรับโรคผู้สูงอายุ
                         </a>
                         <ul class="dropdown-menu ">
-                            <li><a class="dropdown-item" href="{{ url('/obesity') }}">โรคอ้วน</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/diabetes2') }}">โรคเบาหวาน</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/blood_pressure3') }}">โรคความดันโลหิตสูง</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/High_blood_fat') }}">โรคไขมันในเลือดสูง</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/Osteoarthritis') }}">โรคข้อเสื่อม</a></li>
-                            <li><a class="dropdown-item" href="#">โรคหัวใจขาดเลือด</a></li>
-                            <li><a class="dropdown-item" href="#">โรคสมองเสื่อม</a></li>
-                            <li><a class="dropdown-item" href="#">โรคซึมเศร้า</a></li>
-                            <li><a class="dropdown-item" href="#">อาการวิตกกังวลและนอนไม่หลับ</a></li>
-                            <li><a class="dropdown-item" href="#">โรคเกี่ยวกับทางเดินอาหาร</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/obesity') }}">อาหารสำหรับโรคอ้วน</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/diabetes2') }}">อาหารสำหรับโรคเบาหวาน</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/blood_pressure3') }}">อาหารสำหรับโรคความดันโลหิตสูง</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/High_blood_fat') }}">อาหารสำหรับโรคไขมันในเลือดสูง</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/Osteoarthritis') }}">อาหารสำหรับโรคข้อเข่าเสื่อม</a></li>
+                            <li><a class="dropdown-item" href="#">อาหารสำหรับโรคหัวใจขาดเลือด</a></li>
+                            <li><a class="dropdown-item" href="#">อาหารสำหรับโรคสมองเสื่อม</a></li>
+                            <li><a class="dropdown-item" href="#">อาหารสำหรับโรคเก๊าท์</a></li>
+                            <li><a class="dropdown-item" href="#">อาหารสำหรับโรคไต</a></li>
+                            <li><a class="dropdown-item" href="#">อาหารสำหรับโรคกระเพาะ</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link text-light link-secondary" aria-disabled="true"
