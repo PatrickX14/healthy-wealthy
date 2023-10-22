@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function obesity() {
-        return view('disease/obesity');
+        return view('diseasedetails/odesity');
     }
 
     public function diabetes2() {
