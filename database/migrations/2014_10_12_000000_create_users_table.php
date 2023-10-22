@@ -21,8 +21,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        DB::table('users')
-            ->insert([
+        DB::table('users')->insert([
                 [
                     'name' => 'admin',
                     'email' => 'admin@local',
