@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <div class="container mt-5 bg-body-secondary pb-3 rounded-4">
-        <form method="POST" action="{{ route('food.upload') }}" enctype="multipart/form-data">
+        <form method="POST" action="/foodupload" enctype="multipart/form-data">
             @csrf
             <div class="row align-items-start g-3 fs-4">
                 <div class="col-sm-12">

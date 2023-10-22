@@ -52,26 +52,19 @@ class FoodController extends Controller
             'refer.required' => 'โปรดระบุแหล่งอ้างอิง'
         ]);
 
-        $filename = $request->file('picture')->getClientOriginalName();
-        $request->file('picture')->storeAs('image', $filename, 'public');
+        $food = new Food;
+        $food->foodname = $request->foodname;
+        $food->foodkcal = $request->foodkcal;
+        $food->foodcategory = $request->foodcategory;
+        $food->disease = $request->disease;
+        $food->foodingr = $request->foodingr;
+        $food->foodrecipe = $request->foodrecipe;
+        $food->video = $request->video;
+        $food->picture = $request->picture;
+        $food->refer = $request->refer;
+        $food->save();
 
-        $upload = Food::create([
-            'foodname' => $request->foodname,
-            'foodkcal' => $request->foodkcal,
-            'foodcategory' => $request->foodcategory,
-            'disease' => $request->disease,
-            'foodingr' => $request->foodingr,
-            'foodrecipe' => $request->foodrecipe,
-            'video' => $request->video,
-            'picture' => $request->picture->getClientOriginalName(),
-            'refer' => $request->refer
-        ]);
-        // if(!$request->hasFile('picture')) {
-        //     echo 'no file uploaded';
-        // }else {
-        //     echo 'file uploaded';
-        // }
-        return redirect('/');
+        echo $food->foodname;
     }
 
     /**
@@ -79,8 +72,7 @@ class FoodController extends Controller
      */
     public function show(string $id)
     {
-        $foods = Food::find($id);
-        return view('food/foodshow')->with('foods', $foods);
+        //
     }
 
     /**

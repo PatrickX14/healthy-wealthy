@@ -43,11 +43,9 @@ Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
 Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
 Route::get('/calculator', [PageController::class, 'calculator']);
 
-Route::get('/foodshow', [FoodController::class, 'index'])
-    ->name('food.show');
-Route::post('/foodupload', [FoodController::class, 'store'])->name('food.upload');
+Route::get('/foodshow', [FoodController::class, 'index'])->name('food.show');
 
-
+Route::post('/foodupload', [FoodController::class, 'store']);
 
 Route::get('/oldindex', function () {
     return view('oldindex');
