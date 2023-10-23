@@ -31,10 +31,10 @@
                 </div>
                 <div class="col-4">
                     <label class="h-100 w-100" for="">โรค</label>
-                    <select class="form-select" aria-label="Default select example" name="disease">
+                    <select class="form-select" aria-label="Default select example" name="foodcategory">
                         <option selected disabled>เลือกโรค</option>
-                        <option value="โรคอ้วน">โรคอ้วน</option>
-                        <option value="โรคเบาหวาน">โรคเบาหวาน</option>
+                        <option value="ของทอด">โรคอ้วน</option>
+                        <option value="ของทอด">โรคเบาหวาน</option>
                     </select>
                     @error('foodcategory')
                         <span class="text-danger fs-6">{{ $message }}</span>
@@ -83,5 +83,5 @@
             </div>
         </form>
     </div>
-
+    <script src="{{ asset('js/foodupload.js') }}"></script>
 @endsection

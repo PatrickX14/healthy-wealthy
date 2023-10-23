@@ -19,7 +19,7 @@
             <li>นั่งๆ นอนๆ เป็นส่วนใหญ่</li>
             <li>ขาดการออกกำลังกาย</li>
         </ul>
-        <h4>ปัจจัยภายนอก ได้แก่</h4>
+        <h4>ปัจจัยภายใน ได้แก่</h4>
         <ul>
             <li>ความผิดปกติของต่อมไรท่อ เช่น ต้อมใต้สมอง ต่อมไทรอยด์</li>
             <li>ภาวะเครียด</li>
@@ -29,16 +29,17 @@
         <hr>
     </div>
     <div class="container">
-        <h2>อาหารที่เหมาะกับโรคอ้วนโรคอ้วน</h2>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            @foreach ($food as $data)
-                <div class="col">
-                    <div class="card">
-                        <a href="">
-                            <img src="{{ asset('storage/img/'.$data->picture) }}" class="card-img-top" style="width: 419px; height:278px;">
-                            <div class="card-body" style="width: 200px;">
-                                <p class="card-text fs-5">{{ $data->foodname }}</p>
-                                <i class="fa-solid fa-fire fs-6"> {{ $data->foodkcal }}</i>
+        <h4>อาหารที่เหมาะกับคนที่เป็นโรคอ้วน</h4>
+        <div class="row row-cols-1 row-cols-md-4">
+            @foreach ($foods as $food)
+                <div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 290px;">
+                        <a href="#">
+                            <img src="{{ asset('storage/img/' . $food->picture) }}" class="card-img-top"
+                                style="width: 100%; height:240px;">
+                            <div class="card-body">
+                                <p class="card-text">แก้วมังกร</p>
+                                <i class="fa-solid fa-fire"> 100 kcal</i>
                             </div>
                         </a>
                     </div>
