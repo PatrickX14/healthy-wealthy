@@ -26,5 +26,24 @@
             <li>จิตใจและอารมณ์</li>
             <li>กรรมพันธุ์</li>
         </ul>
+        <hr>
+    </div>
+    <div class="container">
+        <h2>อาหารที่เหมาะกับโรคอ้วนโรคอ้วน</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach ($food as $data)
+                <div class="col">
+                    <div class="card">
+                        <a href="">
+                            <img src="{{ asset('storage/img/'.$data->picture) }}" class="card-img-top" style="width: 419px; height:278px;">
+                            <div class="card-body" style="width: 200px;">
+                                <p class="card-text fs-5">{{ $data->foodname }}</p>
+                                <i class="fa-solid fa-fire fs-6"> {{ $data->foodkcal }}</i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 @endsection
