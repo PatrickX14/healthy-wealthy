@@ -31,10 +31,18 @@
                 </div>
                 <div class="col-4">
                     <label class="h-100 w-100" for="">โรค</label>
-                    <select class="form-select" aria-label="Default select example" name="foodcategory">
+                    <select class="form-select" aria-label="Default select example" name="disease">
                         <option selected disabled>เลือกโรค</option>
-                        <option value="ของทอด">โรคอ้วน</option>
-                        <option value="ของทอด">โรคเบาหวาน</option>
+                        <option value="โรคอ้วน">โรคอ้วน</option>
+                        <option value="โรคเบาหวาน">โรคเบาหวาน</option>
+                        <option value="โรคความดันโลหิตสูง">โรคความดันโลหิตสูง</option>
+                        <option value="โรคไขมันในเลือดสูง">โรคไขมันในเลือดสูง</option>
+                        <option value="โรคข้อเข่าเสือม">โรคข้อเข่าเสือม</option>
+                        <option value="โรคหัวใจขาดเลือด">โรคหัวใจขาดเลือด</option>
+                        <option value="โรคสมองเสื่อม">โรคสมองเสื่อม</option>
+                        <option value="โรคเก๊าท์">โรคเก๊าท์</option>
+                        <option value="โรคไต">โรคไต</option>
+                        <option value="โรคกระเพาะ">โรคกระเพาะ</option>
                     </select>
                     @error('foodcategory')
                         <span class="text-danger fs-6">{{ $message }}</span>

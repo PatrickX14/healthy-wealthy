@@ -37,15 +37,24 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/obesity', [PageController::class, 'obesity']);
-Route::get('/diabetes2', [PageController::class, 'diabetes2']);
-Route::get('/bllod_pressure3', [PageController::class, 'bllod_pressure3']);
-Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
-Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
+// Route::get('/obesity', [PageController::class, 'obesity']);
+// Route::get('/diabetes2', [PageController::class, 'diabetes2']);
+// Route::get('/bllod_pressure3', [PageController::class, 'bllod_pressure3']);
+// Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
+// Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
 Route::get('/calculator', [PageController::class, 'calculator']);
 
 Route::controller(DiseaseController::class)->group(function(){
     Route::get('/obesity', 'obesity');
+    Route::get('/diabetes', 'diabetes');
+    Route::get('/hypertension', 'hypertension');
+    Route::get('/hyperlipidemia', 'hyperlipidemia');
+    Route::get('/osteoarthritis', 'osteoarthritis');
+    Route::get('/heart', 'heart');
+    Route::get('/dementia', 'dementia');
+    Route::get('/gout', 'gout');
+    Route::get('/kidney', 'kidney');
+    Route::get('/gastritis', 'gastritis');
 });
 
 Route::get('/foodshow', [FoodController::class, 'index'])->name('food.show');

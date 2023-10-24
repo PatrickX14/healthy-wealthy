@@ -30,7 +30,7 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validate = $request->validate([
             'foodname' => 'required',
             'foodkcal' => 'required',
             'foodcategory' => 'required',
@@ -52,19 +52,24 @@ class FoodController extends Controller
             'refer.required' => 'โปรดระบุแหล่งอ้างอิง'
         ]);
 
-        $food = new Food;
-        $food->foodname = $request->foodname;
-        $food->foodkcal = $request->foodkcal;
-        $food->foodcategory = $request->foodcategory;
-        $food->disease = $request->disease;
-        $food->foodingr = $request->foodingr;
-        $food->foodrecipe = $request->foodrecipe;
-        $food->video = $request->video;
-        $food->picture = $request->picture;
-        $food->refer = $request->refer;
-        $food->save();
+        if(!$validate) {
+            return;
+        }else {
+            $food = new Food;
+            $food->foodname = $request->foodname;
+            $food->foodkcal = $request->foodkcal;
+            $food->foodcategory = $request->foodcategory;
+            $food->disease = $request->disease;
+            $food->foodingr = $request->foodingr;
+            $food->foodrecipe = $request->foodrecipe;
+            $food->video = $request->video;
+            $food->picture = $request->picture->getClientOriginalName();
+            $food->refer = $request->refer;
+            $food->save();
+            $request->file('picture')->storeAs('image', $request->picture->getClientOriginalName(), 'public');
+        }
 
-        echo $food->foodname;
+        return redirect('/');
     }
 
     /**
