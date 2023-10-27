@@ -25,7 +25,7 @@
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
-                <img src="{{ asset('img/logo.png') }}" alt="" class="logo">
+                <img src="{{ asset('img/logo.png') }}" class="logo">
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
                     style="font-size: 24px;">

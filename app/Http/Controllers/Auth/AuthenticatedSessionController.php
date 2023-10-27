@@ -31,6 +31,14 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ], [
+            'email.required' => 'โปรดระบุอีเมล',
+            'password.required' => 'โปรดระบุรหัสผ่าน'
+        ]);
+
         return redirect()->intended($previous_url);
     }
 
