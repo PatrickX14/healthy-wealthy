@@ -74,6 +74,7 @@
                             <div class="col-6">
                                 <label class="h-100 w-100" for="">ขั้นตอนการปรุงอาหาร</label>
                                 <textarea class="w-100 form-control" style="height: 200px; overflow:visible;" type="number" name="foodrecipe"></textarea>
+                                {{-- <input class="h-100 w-100 form-control" type="text" name="foodrecipe"> --}}
                                 @error('foodrecipe')
                                     <span class="text-danger fs-6">{{ $message }}</span>
                                 @enderror
@@ -81,6 +82,7 @@
                             <div class="col-6">
                                 <label class="h-100 w-100" for="">วัตถุดิบ</label>
                                 <textarea class="w-100 form-control" style="height: 200px; overflow:visible;" type="number" name="foodingr"></textarea>
+                                {{-- <input class="h-100 w-100 form-control" type="text" name="foodingr"> --}}
                                 @error('foodingr')
                                     <span class="text-danger fs-6">{{ $message }}</span>
                                 @enderror
