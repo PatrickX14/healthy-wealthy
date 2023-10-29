@@ -21,10 +21,6 @@ class Food extends Model
         'picture',
         'refer'
     ];
-    protected $casts =[
-        'foodingr' => 'array',
-        'foodrecipe' => 'array'
-    ];
 
     /**
      * Get the disease that owns the Food

@@ -30,7 +30,7 @@
                 </label>
             </div>
 
-            <div class="list-group">
+            {{-- <div class="list-group">
                 <label for="gender">กิจกรรมในชีวิตประจำวัน</label>
                 <label class="list-group-item d-flex gap-2">
                     <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1"
@@ -57,7 +57,7 @@
                         id="listGroupRadios2" value="female">
                     <span>ผู้หญิง</span>
                 </label>
-            </div>
+            </div> --}}
 
             <label for="weight">น้ำหนัก</label>
             <input type="number" name="weight" id="weight" placeholder="กิโลกรัม" class="form-control">
