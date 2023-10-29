@@ -108,9 +108,12 @@ button:focus {
     outline: none;
 }
 
-button.ghost {
+a.ghost {
     background: transparent;
     border-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    padding: 4px 10px 4px 10px;
 }
 
 .form-container {

@@ -28,4 +28,13 @@ class PageController extends Controller
     public function calculator() {
         return view('calculator');
     }
+    public function nutrition() {
+        return view('nutrition');
+    }
+    public function disease() {
+        return view('diseaselist');
+    }
+    public function foodshow() {
+        return view('foodshow');
+    }
 }

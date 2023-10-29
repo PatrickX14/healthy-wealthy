@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">

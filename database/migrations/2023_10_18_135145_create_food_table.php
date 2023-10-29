@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('foodname');
             $table->string('foodkcal');
             $table->string('foodcategory');
-            $table->string('disease');
+            $table->foreignId('diseases_id')->contrained();
             $table->longText('foodingr');
             $table->longText('foodrecipe');
             $table->string('video');

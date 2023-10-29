@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Models\Food;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,8 @@ Route::get('/name', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $foodlist = Food::all();
+    return view('dashboard', compact('foodlist'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Route::get('/obesity', [PageController::class, 'obesity']);
@@ -43,6 +45,8 @@ Route::get('/dashboard', function () {
 // Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
 // Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
 Route::get('/calculator', [PageController::class, 'calculator']);
+Route::get('/nutrition', [PageController::class, 'nutrition']);
+Route::get('/diseaslist', [PageController::class, 'disease']);
 
 Route::controller(DiseaseController::class)->group(function(){
     Route::get('/obesity', 'obesity');
@@ -55,6 +59,10 @@ Route::controller(DiseaseController::class)->group(function(){
     Route::get('/gout', 'gout');
     Route::get('/kidney', 'kidney');
     Route::get('/gastritis', 'gastritis');
+});
+
+Route::get('/newindex', function(){
+    return view('newindex');
 });
 
 Route::get('/foodshow', [FoodController::class, 'index'])->name('food.show');

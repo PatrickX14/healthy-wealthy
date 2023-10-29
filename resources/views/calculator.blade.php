@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
     <div class="calCulator">
         <div class="calCulatorForm">
@@ -29,18 +29,48 @@
                     <span>ผู้หญิง</span>
                 </label>
             </div>
+
+            <div class="list-group">
+                <label for="gender">กิจกรรมในชีวิตประจำวัน</label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1"
+                        value="male" checked>
+                    <span>ไม่ออกกำลังกาย</span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                        id="listGroupRadios2" value="female">
+                    <span>ผู้หญิง</span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                        id="listGroupRadios2" value="female">
+                    <span>ผู้หญิง</span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                        id="listGroupRadios2" value="female">
+                    <span>ผู้หญิง</span>
+                </label>
+                <label class="list-group-item d-flex gap-2">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
+                        id="listGroupRadios2" value="female">
+                    <span>ผู้หญิง</span>
+                </label>
+            </div>
+
             <label for="weight">น้ำหนัก</label>
-            <input type="number" name="weight" id="weight" placeholder="กิโลกรัม">
+            <input type="number" name="weight" id="weight" placeholder="กิโลกรัม" class="form-control">
             <strong class="calculatorError" id="weightError">โปรดระบุุน้ำหนัก(กก.)</strong>
             <label for="height">ส่วนสูง</label>
-            <input type="number" name="height" id="height" placeholder="เซ็นติเมตร">
+            <input type="number" name="height" id="height" placeholder="เซ็นติเมตร" class="form-control">
             <strong class="calculatorError" id="heightError">โปรดระบุส่วนสูง(ซม.)</strong>
             <label for="age">อายุ</label>
-            <input type="number" name="age" id="age" placeholder="ปี" max="100" min="0">
+            <input type="number" name="age" id="age" placeholder="ปี" max="100" min="0" class="form-control">
             <strong class="calculatorError" id="ageError">โปรดระบุอายุ(ปี)</strong>
             <label for="output">Output</label>
-            <input type="number" id="result" value="0">
-            <button class="calculateButton" id="calculateButton">Calculate</button>
+            <input type="number" id="result" value="0" class="form-control">
+            <button class="btn btn-primary mt-3" type="button" id="calculateButton">คำนวน</button>
         </div>
     </div>
     <script src="{{ asset('js/calculator.js') }}"></script>

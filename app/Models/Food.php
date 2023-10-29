@@ -14,11 +14,21 @@ class Food extends Model
         'foodname',
         'foodkcal',
         'foodcategory',
-        'disease',
+        'diseases_id',
         'foodingr',
         'foodrecipe',
         'video',
         'picture',
         'refer'
     ];
+
+    /**
+     * Get the disease that owns the Food
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function disease(): BelongsTo
+    {
+        return $this->belongsTo(Disease::class);
+    }
 }

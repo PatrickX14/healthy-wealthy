@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
     <div class="aboutHeader">
         <img src="{{ asset('img/food/o2.jpg') }}" alt="">

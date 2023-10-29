@@ -1,5 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
+https://www.bing.com/search?q=โรคข้อเข่าเสือม&qs=n&form=QBRE&sp=-1&ghc=1&lq=0&pq=โรคข้อเข่าเสือม&sc=0-15&sk=&cvid=A3308AFA03384867903B44CFB41E597E&ghsh=0&ghacc=0&ghpl=
     <div class="text-center mt-5">
         <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
     </div>

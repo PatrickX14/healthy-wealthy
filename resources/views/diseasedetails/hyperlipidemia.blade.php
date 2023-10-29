@@ -1,5 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
+https://www.pobpad.com/%E0%B9%84%E0%B8%82%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AA%E0%B8%B9%E0%B8%87
     <div class="text-center mt-5">
         <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
     </div>

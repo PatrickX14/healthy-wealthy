@@ -94,10 +94,10 @@
     margin-top: 10px;
 }
 
-.calCulatorForm input {
+/* .calCulatorForm input {
     padding: 8px;
     border-radius: 4px;
-}
+} */
 
 .calCulatorForm input[type="button"] {
     margin-top: 14px;
@@ -152,4 +152,23 @@ label[for="output"] {
     font-size: 48px;
     right: 30px;
     bottom: 30px;
+}
+
+img.introBackground {
+    position: absolute;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 20% 18%;
+    z-index: -1;
+    width: 100%;
+    height: 500px;
+    left: 0;
+}
+
+.diseaseContainer {
+    width: 100%;
+}
+
+.diseasePicture {
+    width: 100%;
 }

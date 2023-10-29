@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
     <div class="container mt-5 bg-body-secondary pb-3 rounded-4">
         <form method="POST" action="/foodupload" enctype="multipart/form-data">
@@ -31,18 +31,10 @@
                 </div>
                 <div class="col-4">
                     <label class="h-100 w-100" for="">โรค</label>
-                    <select class="form-select" aria-label="Default select example" name="disease">
-                        <option selected disabled>เลือกโรค</option>
-                        <option value="โรคอ้วน">โรคอ้วน</option>
-                        <option value="โรคเบาหวาน">โรคเบาหวาน</option>
-                        <option value="โรคความดันโลหิตสูง">โรคความดันโลหิตสูง</option>
-                        <option value="โรคไขมันในเลือดสูง">โรคไขมันในเลือดสูง</option>
-                        <option value="โรคข้อเข่าเสือม">โรคข้อเข่าเสือม</option>
-                        <option value="โรคหัวใจขาดเลือด">โรคหัวใจขาดเลือด</option>
-                        <option value="โรคสมองเสื่อม">โรคสมองเสื่อม</option>
-                        <option value="โรคเก๊าท์">โรคเก๊าท์</option>
-                        <option value="โรคไต">โรคไต</option>
-                        <option value="โรคกระเพาะ">โรคกระเพาะ</option>
+                    <select class="form-select" aria-label="Default select example" name="diseases_id">
+                        @foreach ($diseases as $diseases)
+                            <option value="{{ $diseases->id }}">{{ $diseases->name }}</option>
+                        @endforeach
                     </select>
                     @error('foodcategory')
                         <span class="text-danger fs-6">{{ $message }}</span>

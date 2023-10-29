@@ -1,7 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
     <div class="text-center mt-5">
-        <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
+        <img src="{{ asset('img/disease/diabetes.jpg') }}" class="rounded" alt="...">
     </div>
     <div class="container mt-3">
         <h1>โรคกระเพาะ</h1>

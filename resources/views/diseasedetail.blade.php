@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
     <div class="text-center mt-5">
         <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">

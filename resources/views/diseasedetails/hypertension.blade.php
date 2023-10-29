@@ -1,5 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.index')
 @section('content')
+https://hellokhunmor.com/%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%a0%e0%b8%b2%e0%b8%9e%e0%b8%ab%e0%b8%b1%e0%b8%a7%e0%b9%83%e0%b8%88/%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%94%e0%b8%b1%e0%b8%99%e0%b9%82%e0%b8%a5%e0%b8%ab%e0%b8%b4%e0%b8%95%e0%b8%aa%e0%b8%b9%e0%b8%87/%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%94%e0%b8%b1%e0%b8%99%e0%b9%82%e0%b8%a5%e0%b8%ab%e0%b8%b4%e0%b8%95%e0%b8%aa%e0%b8%b9%e0%b8%87-%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%94%e0%b8%b1%e0%b8%99%e0%b9%82%e0%b8%a5%e0%b8%ab%e0%b8%b4%e0%b8%95%e0%b8%aa%e0%b8%b9%e0%b8%87/
     <div class="text-center mt-5">
         <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
     </div>

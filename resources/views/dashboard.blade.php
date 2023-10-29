@@ -10,6 +10,28 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
+                    <ul>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">ชื่ออาหาร</th>
+                                    <th scope="col">ปริมาณแคลลอรี่</th>
+                                    <th scope="col">โรค</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($foodlist as $food)
+                                <tr>
+                                    <th scope="row">{{ $food->id }}</th>
+                                    <td>{{ $food->foodname }}</td>
+                                    <td>{{ $food->foodkcal }}</td>
+                                    <td>{{ $food->diseases->name }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </ul>
                 </div>
             </div>
         </div>

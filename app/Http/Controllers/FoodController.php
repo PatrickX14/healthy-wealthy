@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Disease;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -22,7 +23,8 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return view('food/foodupload');
+        $diseases = Disease::all();
+        return view('food/foodupload', compact('diseases'));
     }
 
     /**
@@ -34,7 +36,7 @@ class FoodController extends Controller
             'foodname' => 'required',
             'foodkcal' => 'required',
             'foodcategory' => 'required',
-            'disease' => 'required',
+            'diseases_id' => 'required',
             'foodingr' => 'required',
             'foodrecipe' => 'required',
             'video' => 'required',
@@ -44,7 +46,7 @@ class FoodController extends Controller
             'foodname.required' => 'โปรดระบุชื่ออาหาร',
             'foodkcal.required' => 'โปรดระบุปริมาณแคลอรี่',
             'foodcategory.required' => 'โปรดเลือกหมวดหมู่',
-            'disease.required' => 'โปรดเลือกโรค',
+            'diseases_id.required' => 'โปรดเลือกโรค',
             'foodingr.required' => 'โปรดระบุขั้นตอนการทำอาหาร',
             'foodrecipe.required' => 'โปรดเลือกประเภทอาหาร',
             'video.required' => 'โปรดเพิ่มวิดีโอ',
@@ -59,7 +61,7 @@ class FoodController extends Controller
             $food->foodname = $request->foodname;
             $food->foodkcal = $request->foodkcal;
             $food->foodcategory = $request->foodcategory;
-            $food->disease = $request->disease;
+            $food->diseases_id = $request->diseases_id;
             $food->foodingr = $request->foodingr;
             $food->foodrecipe = $request->foodrecipe;
             $food->video = $request->video;
