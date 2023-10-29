@@ -12,8 +12,5 @@ class Disease extends Model
     protected $primarykey = 'id';
     protected $fillable = ['name'];
 
-    public function disease(): BelongsTo
-    {
-        return $this->belongsTo(Disease::class);
-    }
+
 }

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('foodkcal');
             $table->string('foodcategory');
             $table->foreignId('diseases_id')->contrained();
-            $table->longText('foodingr');
-            $table->longText('foodrecipe');
+            $table->json('foodingr');
+            $table->json('foodrecipe');
             $table->string('video');
             $table->string('picture');
             $table->string('refer')->nullable();

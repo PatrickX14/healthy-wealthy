@@ -24,7 +24,7 @@ class FoodController extends Controller
     public function create()
     {
         $diseases = Disease::all();
-        return view('food/foodupload', compact('diseases'));
+        return view('dashboardfoodupload', compact('diseases'));
     }
 
     /**
@@ -54,9 +54,9 @@ class FoodController extends Controller
             'refer.required' => 'โปรดระบุแหล่งอ้างอิง'
         ]);
 
-        if(!$validate) {
+        if (!$validate) {
             return;
-        }else {
+        } else {
             $food = new Food;
             $food->foodname = $request->foodname;
             $food->foodkcal = $request->foodkcal;
@@ -71,7 +71,7 @@ class FoodController extends Controller
             $request->file('picture')->storeAs('image', $request->picture->getClientOriginalName(), 'public');
         }
 
-        return redirect('/');
+        return redirect('/dashboard');
     }
 
     /**
@@ -79,7 +79,8 @@ class FoodController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $food = Food::find($id);
+        return view('foodshow', compact('food'));
     }
 
     /**
@@ -95,7 +96,49 @@ class FoodController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validate = $request->validate([
+            'foodname' => 'required',
+            'foodkcal' => 'required',
+            'foodcategory' => 'required',
+            'diseases_id' => 'required',
+            'foodingr' => 'required',
+            'foodrecipe' => 'required',
+            'video' => 'required',
+            'picture' => 'nullable',
+            'refer' => 'required'
+        ], [
+            'foodname.required' => 'โปรดระบุชื่ออาหาร',
+            'foodkcal.required' => 'โปรดระบุปริมาณแคลอรี่',
+            'foodcategory.required' => 'โปรดเลือกหมวดหมู่',
+            'diseases_id.required' => 'โปรดเลือกโรค',
+            'foodingr.required' => 'โปรดระบุขั้นตอนการทำอาหาร',
+            'foodrecipe.required' => 'โปรดเลือกประเภทอาหาร',
+            'video.required' => 'โปรดเพิ่มวิดีโอ',
+            'picture.required' => 'โปรดเพิ่มรูป',
+            'refer.required' => 'โปรดระบุแหล่งอ้างอิง'
+        ]);
+
+        if (!$validate) {
+            return;
+        } else {
+            $food = Food::find($id);
+            $food->foodname = $request->foodname;
+            $food->foodkcal = $request->foodkcal;
+            $food->foodcategory = $request->foodcategory;
+            $food->diseases_id = $request->diseases_id;
+            $food->foodingr = $request->foodingr;
+            $food->foodrecipe = $request->foodrecipe;
+            $food->video = $request->video;
+            if ($request->has('picture')) {
+                $food->picture = $request->picture->getClientOriginalName();
+                $request->file('picture')->storeAs('image', $request->picture->getClientOriginalName(), 'public');
+            }else{
+                $food->picture = null;
+            }
+            $food->refer = $request->refer;
+            $food->update($request->all());
+        }
+        return redirect('/dashboard');
     }
 
     /**
@@ -103,6 +146,8 @@ class FoodController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $food = Food::find($id);
+        $food->destroy($id);
+        return redirect('/dashboard');
     }
 }
