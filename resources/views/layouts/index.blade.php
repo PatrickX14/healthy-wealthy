@@ -48,14 +48,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ url('/') }}" class="nav-item nav-link">หน้าหลัก</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="{{ url('/nutrition') }}" class="nav-item nav-link">โภชนาการผู้สูงอายุ</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">หมวดหมู่</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="{{ url('/diseaslist') }}" class="dropdown-item">โรค</a>
                         <a href="{{ url('/foodshow') }}" class="dropdown-item">อาหาร</a>
+                        <a href="{{ url('/exercisedetails') }}" class="dropdown-item">การออกกำลังกาย</a>
                         <a href="{{ url('/calculator') }}" class="dropdown-item">คำนวนดัชนีย์มวล</a>
-                        <a href="{{ url('/nutrition') }}" class="dropdown-item">โภชนาการผู้สูงอายุ</a>
                     </div>
                 </div>
             </div>
@@ -83,6 +83,7 @@
     </div>
 
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://kit.fontawesome.com/73c417b541.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

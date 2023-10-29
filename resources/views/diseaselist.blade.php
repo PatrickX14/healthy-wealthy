@@ -141,6 +141,23 @@
                                 class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            {{-- <i class="fa-solid fa-stomach text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/stomach.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
+                        </div>
+                        <h4 class="mb-3">โรคกระเพาะ</h4>
+                        <p class="mb-4">โรคกระเพาะอาหารอักเสบ (Gastritis) หรือที่ว่าโรคกระเพาะ
+                            เป็นโรคที่เกิดจากการอักเสบหรือเกิดการระคายเคืองบริเวณเยื่อบุภายในกระเพาะอาหาร
+                            สามารถเกิดขึ้นได้แบบเฉียบพลันในระยะเวลารวดเร็ว เป็นในระยะสั้น ๆ และหายภายใน 1-2 สัปดาห์
+                            หรือมีอาการบ่อยครั้งเป็นระยะเวลานานจนเกิดการอักเสบเรื้อรัง ทำให้เกิดแผล
+                            และเพิ่มความเสี่ยงในการเป็นโรคมะเร็งกระเพาะอาหารได้</p>
+                        <a class="btn" href="{{ url('/gout') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

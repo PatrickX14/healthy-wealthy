@@ -73,6 +73,10 @@ Route::get('/oldindex', function () {
     return view('oldindex');
 });
 
+Route::get('/exercisedetails', function () {
+    return view('exercise/exercisedetails');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::get('/foodupload', [FoodController::class, 'create']);

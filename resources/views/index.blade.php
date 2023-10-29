@@ -1,6 +1,5 @@
 @extends('layouts.index')
 @section('content')
-
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -51,20 +50,20 @@
                 <div class="row g-4">
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">123</h2>
-                            <p class="text-light mb-0">Expert Doctors</p>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">10</h2>
+                            <p class="text-light mb-0">โรคที่มีโอกาศเกิดในผู้สูงอายุ</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
                             <h2 class="text-white mb-1" data-toggle="counter-up">1234</h2>
-                            <p class="text-light mb-0">Medical Stuff</p>
+                            <p class="text-light mb-0">เมนูอาหาร</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
                             <h2 class="text-white mb-1" data-toggle="counter-up">12345</h2>
-                            <p class="text-light mb-0">Total Patients</p>
+                            <p class="text-light mb-0">การออกกำลังการ</p>
                         </div>
                     </div>
                 </div>
@@ -72,22 +71,17 @@
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                 <div class="owl-carousel header-carousel">
                     <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('img/1.jpg') }}" alt="">
+                        <img class="img-fluid" src="{{ asset('img/62a4e7c571a40b2f498c0536d45ff3b3.jpg') }}" alt="">
                         <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0">Cardiology</h1>
+                            {{-- <h1 class="display-1 text-white mb-0">Cardiology</h1> --}}
                         </div>
                     </div>
                     <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('img/carousel-2.jpg') }}" alt="">
-                        <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0">Neurology</h1>
-                        </div>
+                        <img class="img-fluid" src="{{ asset('img/2fd36e1138dfe9c62557abeaf43c2544.jpg') }}" alt="">
                     </div>
                     <div class="owl-carousel-item position-relative">
-                        <img class="img-fluid" src="{{ asset('img/carousel-3.jpg') }}" alt="">
-                        <div class="owl-carousel-text">
-                            <h1 class="display-1 text-white mb-0">Pulmonary</h1>
-                        </div>
+                        <img class="img-fluid" src="{{ asset('img/d74a74b5fa5b3f315880ca7405b2fa8d.jpg') }}" alt="">
+
                     </div>
                 </div>
             </div>
@@ -102,24 +96,16 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="d-flex flex-column">
-                        <img class="img-fluid rounded w-75 align-self-end" src="{{ asset('img/about-1.jpg') }}"
+                        <img class="img-fluid rounded w-75 align-self-end" src="{{ asset('img/cd050d335a47804e7c15d0aff389affa.jpg') }}"
                             alt="">
-                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{ asset('img/about-2.jpg') }}"
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{{ asset('img/1f4ba19b6cceda3377766920053ed609.jpg') }}"
                             alt="" style="margin-top: -25%;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p class="d-inline-block border rounded-pill py-1 px-4">About Us</p>
-                    <h1 class="mb-4">Why You Should Trust Us? Get Know About Us!</h1>
-                    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita
-                        erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam
-                        rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor
-                        eos.</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Quality health care</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Only Qualified Doctors</p>
-                    <p><i class="far fa-check-circle text-primary me-3"></i>Medical Research Professionals</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
+                    <a href="{{ url('/nutrition') }}" class="d-inline-block border rounded-pill py-1 px-4">โภชนาการผู้สูงอายุ</a>
+                    <h1 class="mb-4">การดูแลรักษาสุขภาพของผู้สูงอายุ</h1>
+                    <p>มีตั้งแต่การดูแลเรื่องอาหารที่รับประทานให้เหมาะกับโรคและจำนวนแคลอรี่ รวมไปถึงการออกกำลังกายให้เหมาะสมต่อผู้สูงอายุ</p>
                 </div>
             </div>
         </div>
@@ -139,123 +125,164 @@
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-heartbeat text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-dumbbell text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/weight.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคอ้วน</h4>
                         <p class="mb-4">ภาวะที่ร่างกายมีการสะสมไขมันมากเกินกว่าปกติหรือมากเกินกว่าที่ร่างกายจะเผาผลาญ
                             จึงสะสมพลังงานที่เหลือเอาไว้ในรูปของไขมันตามอวัยวะต่างๆ</p>
-                        <a class="btn" href="{{ url('obesity') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('obesity') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-x-ray text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-cookie-bite text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/cookie.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคเบาหวาน</h4>
                         <p class="mb-4">เป็นโรคที่มีน้ำตาลในเลือดสูงกว่าปกติ เกิดเนื่องจากมีอินซูลินน้อย
                             หรือร่างกายไม่ตอบสนองต่ออินซูลิน ทำให้ไม่สามารถนำน้ำตาลไปใช้ได้ตามปกติ</p>
-                        <a class="btn" href="{{ url('diabetes') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('diabetes') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-brain text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-gauge text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/blood-pressure-gauge.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
+
                         </div>
                         <h4 class="mb-3">โรคความดันโลหิตสูง</h4>
                         <p class="mb-4">ความดันโลหิตสูง คือ ค่าความดันภายในหลอดเลือดแดง
                             ซึ่งเกิดจากการบีบตัวของหัวใจเพื่อสูบฉีดเลือดไปเลี้ยงส่วนต่าง ๆ ของร่างกาย</p>
-                        <a class="btn" href="{{ url('/hypertension') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/hypertension') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-wheelchair text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-temperature-arrow-up text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/fever.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคไขมันในเลือดสูง</h4>
                         <p class="mb-4">เป็นภาวะที่ร่างกายมีระดับไขมันในเลือดสูงกว่าปกติ
                             อาจเป็นระดับโคเลสเตอรอลสูงหรือระดับไตรกลีเซอร์ไรด์สูงอย่างใดอย่างหนึ่งหรือสูงทั้งสองชนิดก็ได้
                             ภาวะไขมันในเลือดสูงสามารถทำให้หลอดเลือดแข็ง ตีบ อุดตัน</p>
-                        <a class="btn" href="{{ url('/hyperlipidemia') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/hyperlipidemia') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-tooth text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-heart text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/heart.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคหัวใจขาดเลือด</h4>
                         <p class="mb-4">โรคที่เกิดขึ้นเนื่องจากหลอดเลือดเลี้ยงหัวใจตีบหรือตัน
                             ทำให้กล้ามเนื้อหัวใจมีเลือดไปเลี้ยงลดลงหรือไม่มีเลย เป็นผลให้การทำงานของกล้ามเนื้อหัวใจผิดปกติ
                             หากรุนแรงทำให้เกิดกล้ามเนื้อหัวใจตายได้</p>
-                        <a class="btn" href="{{ url('/heart') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/heart') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-vials text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-bone text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/broken-bone.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคข้อเข่าเสือม</h4>
-                        <p class="mb-4">มีอาการปวดหัวเข่าจากสาเหตุอื่นๆ การมีน้ำหนักตัวที่มากเกินไปจะยิ่งทำให้อาการลุกลามหรือหายช้า
+                        <p class="mb-4">มีอาการปวดหัวเข่าจากสาเหตุอื่นๆ
+                            การมีน้ำหนักตัวที่มากเกินไปจะยิ่งทำให้อาการลุกลามหรือหายช้า
                             จึงควรปรับพฤติกรรมการใช้ชีวิต เช่น ควบคุมน้ำหนัก และการปรับการกินอาหาร</p>
-                        <a class="btn" href="{{ url('/osteoarthritis') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/osteoarthritis') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-vials text-primary fs-4"></i>
+                            {{-- <i class="fa-solid fa-brain text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/brain.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคสมองเสื่อม</h4>
-                        <p class="mb-4">เป็นภาวะที่สมองมีการทำงานแย่ลงจนส่งผลต่อชีวิตประจำวัน ประกอบด้วยกลุ่มอาการหลายๆ อย่างรวมกัน เช่น
+                        <p class="mb-4">เป็นภาวะที่สมองมีการทำงานแย่ลงจนส่งผลต่อชีวิตประจำวัน ประกอบด้วยกลุ่มอาการหลายๆ
+                            อย่างรวมกัน เช่น
                             หลงลืมง่าย คิดเงินไม่ถูก หาของไม่เจอ หลงทางในที่คุ้นเคย มีพฤติกรรมแปลกๆ เป็นต้น</p>
-                        <a class="btn" href="{{ url('/dementia') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/dementia') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-vials text-primary fs-4"></i>
+                            {{-- <i class="fa fa-vials text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/gout.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคเก๊าท์</h4>
                         <p class="mb-4">มีสาเหตุมาจากความผิดปกติของการสะสมกรดยูริค(Uric acid)ในร่างกาย
                             กรดยูริคได้จากการเผาผลาญสารพิวรีนซึ่ง
                             เป็นธาตุอาหารที่ร่างกายสังเคราะห์เองได้และพบได้ทั่วไปในอาหารหลายชนิดโดยปกติเมื่อสารพิวรีนที่ร่างกายได้รับ
                             จะถูกย่อยจนกลายเป็นกรดยูริค</p>
-                        <a class="btn" href="{{ url('/gout') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/gout') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-vials text-primary fs-4"></i>
+                            {{-- <i class="fa fa-vials text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/kidneys.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
                         </div>
                         <h4 class="mb-3">โรคไต</h4>
-                        <p class="mb-4">ภาวะที่ไตทำงานผิดปกติ มีหลายชื่อเรียก เช่น ไตวาย ไตเสื่อม ไตทำงานลดลง แบ่งเป็น 2 ประเภทหลัก
+                        <p class="mb-4">ภาวะที่ไตทำงานผิดปกติ มีหลายชื่อเรียก เช่น ไตวาย ไตเสื่อม ไตทำงานลดลง แบ่งเป็น 2
+                            ประเภทหลัก
                             คือ 1.โรคไตเฉียบพลัน ซึ่งเกิดขึ้นภายในระยะเวลาไม่เกิน 3 เดือน มีโอกาสรักษาให้หายขาดได้ และ
                             2. โรคไตเรื้อรัง ซึ่งเกิดขึ้นในระยะเวลามากกว่า 3 เดือนขึ้นไป</p>
-                        <a class="btn" href="{{ url('/kidney') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/kidney') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item bg-light rounded h-100 p-5">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
+                            style="width: 65px; height: 65px;">
+                            {{-- <i class="fa-solid fa-stomach text-primary fs-4"></i> --}}
+                            <img src="{{asset('img/stomach.png')}}"class="text-primary fs-4 "style="width: 42px" alt="">
+                        </div>
+                        <h4 class="mb-3">โรคกระเพาะ</h4>
+                        <p class="mb-4">โรคกระเพาะอาหารอักเสบ (Gastritis) หรือที่ว่าโรคกระเพาะ
+                            เป็นโรคที่เกิดจากการอักเสบหรือเกิดการระคายเคืองบริเวณเยื่อบุภายในกระเพาะอาหาร
+                            สามารถเกิดขึ้นได้แบบเฉียบพลันในระยะเวลารวดเร็ว เป็นในระยะสั้น ๆ และหายภายใน 1-2 สัปดาห์
+                            หรือมีอาการบ่อยครั้งเป็นระยะเวลานานจนเกิดการอักเสบเรื้อรัง ทำให้เกิดแผล
+                            และเพิ่มความเสี่ยงในการเป็นโรคมะเร็งกระเพาะอาหารได้</p>
+                        <a class="btn" href="{{ url('/gout') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
+    
     <!-- Service End -->
 
 
     <!-- Feature Start -->
-    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+    {{-- <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
         <div class="container feature px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
@@ -325,7 +352,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Feature End -->
 
 
@@ -408,7 +435,7 @@
 
 
     <!-- Appointment Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -465,15 +492,15 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date" data-target-input="nearest">
                                         <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#date"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker"
+                                            style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time" data-target-input="nearest">
                                         <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#time"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker"
+                                            style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -489,7 +516,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Appointment End -->
 
 
@@ -556,5 +583,4 @@
     <script src="{{ asset('lib/tempusdominus/js/moment.min.js') }}"></script>
     <script src="{{ asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
     <script src="{{ asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-
 @endsection
