@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="text-center mt-5">
-        <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
+        <img src="{{ asset('img/disease/gout.jpg') }}" class="rounded" alt="...">
     </div>
     <div class="container mt-3" style="width: 900px">
         <h1>โรคเก๊าท์</h1>

@@ -45,6 +45,11 @@
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <form class="w-25 me-3" role="search" style="width: 300px;">
+            <input type="search" class="form-control" placeholder="ค้นหา...." aria-label="Search">
+        </form>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ url('/') }}" class="nav-item nav-link">หน้าหลัก</a>
@@ -53,12 +58,12 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">หมวดหมู่</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
                         <a href="{{ url('/diseaslist') }}" class="dropdown-item">โรค</a>
-                        <a href="{{ url('/foodshow') }}" class="dropdown-item">อาหาร</a>
-                        <a href="{{ url('/exercisedetails') }}" class="dropdown-item">การออกกำลังกาย</a>
+                        <a href="{{ url('/foodlist') }}" class="dropdown-item">อาหาร</a>
                         <a href="{{ url('/calculator') }}" class="dropdown-item">คำนวนดัชนีย์มวล</a>
                     </div>
                 </div>
             </div>
+
             <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
                 style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
@@ -81,7 +86,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://kit.fontawesome.com/73c417b541.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://kit.fontawesome.com/73c417b541.js" crossorigin="anonymous"></script>
 </body>

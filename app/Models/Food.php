@@ -21,14 +21,18 @@ class Food extends Model
         'picture',
         'refer'
     ];
+    protected $casts =[
+        'foodingr' => 'array',
+        'foodrecipe' => 'array'
+    ];
 
     /**
      * Get the disease that owns the Food
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function disease(): BelongsTo
+    public function diseases()
     {
-        return $this->belongsTo(Disease::class);
+        return $this->belongsTo(Disease::class, 'diseases_id');
     }
 }
