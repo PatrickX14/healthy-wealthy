@@ -151,7 +151,7 @@
                     <div class="service-item bg-light rounded h-100 p-5">
                         <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4"
                             style="width: 65px; height: 65px;">
-                            <i class="fa fa-x-ray text-primary fs-4"></i>
+                            <i class="fa-brands fa-discord text-primary fs-4"></i>
                         </div>
                         <h4 class="mb-3">โรคเบาหวาน</h4>
                         <p class="mb-4">เป็นโรคที่มีน้ำตาลในเลือดสูงกว่าปกติ เกิดเนื่องจากมีอินซูลินน้อย

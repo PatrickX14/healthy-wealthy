@@ -1,8 +1,7 @@
 @extends('layouts.index')
 @section('content')
-    https://hellokhunmor.com/%e0%b8%ad%e0%b8%ad%e0%b8%a3%e0%b9%8c%e0%b9%82%e0%b8%98%e0%b8%9b%e0%b8%b4%e0%b8%94%e0%b8%b4%e0%b8%81%e0%b8%aa%e0%b9%8c-%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b8%81%e0%b8%a5%e0%b9%89%e0%b8%b2%e0%b8%a1%e0%b9%81%e0%b8%a5%e0%b8%b0%e0%b8%81%e0%b8%a3%e0%b8%b0%e0%b8%94%e0%b8%b9%e0%b8%81/%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b8%82%e0%b9%89%e0%b8%ad%e0%b8%ad%e0%b8%b1%e0%b8%81%e0%b9%80%e0%b8%aa%e0%b8%9a/%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b9%80%e0%b8%81%e0%b9%8a%e0%b8%b2%e0%b8%97%e0%b9%8c-%e0%b8%ad%e0%b8%b2%e0%b8%81%e0%b8%b2%e0%b8%a3-%e0%b8%9b%e0%b8%b1%e0%b8%88%e0%b8%88%e0%b8%b1%e0%b8%a2%e0%b9%80%e0%b8%aa%e0%b8%b5%e0%b9%88%e0%b8%a2%e0%b8%87-%e0%b8%81%e0%b8%b2%e0%b8%a3%e0%b8%9b%e0%b9%89%e0%b8%ad%e0%b8%87%e0%b8%81%e0%b8%b1%e0%b8%99/
     <div class="text-center mt-5">
-        <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
+        <img src="{{ asset('img/disease/gout.jpg') }}" class="rounded" alt="...">
     </div>
     <div class="container mt-3" style="width: 900px">
         <h1>โรคเก๊าท์</h1>
