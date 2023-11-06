@@ -1,6 +1,5 @@
 @extends('layouts.index')
 @section('content')
-
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -144,7 +143,8 @@
                         <h4 class="mb-3">โรคอ้วน</h4>
                         <p class="mb-4">ภาวะที่ร่างกายมีการสะสมไขมันมากเกินกว่าปกติหรือมากเกินกว่าที่ร่างกายจะเผาผลาญ
                             จึงสะสมพลังงานที่เหลือเอาไว้ในรูปของไขมันตามอวัยวะต่างๆ</p>
-                        <a class="btn" href="{{ url('obesity') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('obesity') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -156,7 +156,8 @@
                         <h4 class="mb-3">โรคเบาหวาน</h4>
                         <p class="mb-4">เป็นโรคที่มีน้ำตาลในเลือดสูงกว่าปกติ เกิดเนื่องจากมีอินซูลินน้อย
                             หรือร่างกายไม่ตอบสนองต่ออินซูลิน ทำให้ไม่สามารถนำน้ำตาลไปใช้ได้ตามปกติ</p>
-                        <a class="btn" href="{{ url('diabetes') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('diabetes') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -168,7 +169,8 @@
                         <h4 class="mb-3">โรคความดันโลหิตสูง</h4>
                         <p class="mb-4">ความดันโลหิตสูง คือ ค่าความดันภายในหลอดเลือดแดง
                             ซึ่งเกิดจากการบีบตัวของหัวใจเพื่อสูบฉีดเลือดไปเลี้ยงส่วนต่าง ๆ ของร่างกาย</p>
-                        <a class="btn" href="{{ url('/hypertension') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/hypertension') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -181,7 +183,8 @@
                         <p class="mb-4">เป็นภาวะที่ร่างกายมีระดับไขมันในเลือดสูงกว่าปกติ
                             อาจเป็นระดับโคเลสเตอรอลสูงหรือระดับไตรกลีเซอร์ไรด์สูงอย่างใดอย่างหนึ่งหรือสูงทั้งสองชนิดก็ได้
                             ภาวะไขมันในเลือดสูงสามารถทำให้หลอดเลือดแข็ง ตีบ อุดตัน</p>
-                        <a class="btn" href="{{ url('/hyperlipidemia') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/hyperlipidemia') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -194,7 +197,8 @@
                         <p class="mb-4">โรคที่เกิดขึ้นเนื่องจากหลอดเลือดเลี้ยงหัวใจตีบหรือตัน
                             ทำให้กล้ามเนื้อหัวใจมีเลือดไปเลี้ยงลดลงหรือไม่มีเลย เป็นผลให้การทำงานของกล้ามเนื้อหัวใจผิดปกติ
                             หากรุนแรงทำให้เกิดกล้ามเนื้อหัวใจตายได้</p>
-                        <a class="btn" href="{{ url('/heart') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/heart') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -204,9 +208,11 @@
                             <i class="fa fa-vials text-primary fs-4"></i>
                         </div>
                         <h4 class="mb-3">โรคข้อเข่าเสือม</h4>
-                        <p class="mb-4">มีอาการปวดหัวเข่าจากสาเหตุอื่นๆ การมีน้ำหนักตัวที่มากเกินไปจะยิ่งทำให้อาการลุกลามหรือหายช้า
+                        <p class="mb-4">มีอาการปวดหัวเข่าจากสาเหตุอื่นๆ
+                            การมีน้ำหนักตัวที่มากเกินไปจะยิ่งทำให้อาการลุกลามหรือหายช้า
                             จึงควรปรับพฤติกรรมการใช้ชีวิต เช่น ควบคุมน้ำหนัก และการปรับการกินอาหาร</p>
-                        <a class="btn" href="{{ url('/osteoarthritis') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/osteoarthritis') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -216,9 +222,11 @@
                             <i class="fa fa-vials text-primary fs-4"></i>
                         </div>
                         <h4 class="mb-3">โรคสมองเสื่อม</h4>
-                        <p class="mb-4">เป็นภาวะที่สมองมีการทำงานแย่ลงจนส่งผลต่อชีวิตประจำวัน ประกอบด้วยกลุ่มอาการหลายๆ อย่างรวมกัน เช่น
+                        <p class="mb-4">เป็นภาวะที่สมองมีการทำงานแย่ลงจนส่งผลต่อชีวิตประจำวัน ประกอบด้วยกลุ่มอาการหลายๆ
+                            อย่างรวมกัน เช่น
                             หลงลืมง่าย คิดเงินไม่ถูก หาของไม่เจอ หลงทางในที่คุ้นเคย มีพฤติกรรมแปลกๆ เป็นต้น</p>
-                        <a class="btn" href="{{ url('/dementia') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/dementia') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -232,7 +240,8 @@
                             กรดยูริคได้จากการเผาผลาญสารพิวรีนซึ่ง
                             เป็นธาตุอาหารที่ร่างกายสังเคราะห์เองได้และพบได้ทั่วไปในอาหารหลายชนิดโดยปกติเมื่อสารพิวรีนที่ร่างกายได้รับ
                             จะถูกย่อยจนกลายเป็นกรดยูริค</p>
-                        <a class="btn" href="{{ url('/gout') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/gout') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -242,10 +251,12 @@
                             <i class="fa fa-vials text-primary fs-4"></i>
                         </div>
                         <h4 class="mb-3">โรคไต</h4>
-                        <p class="mb-4">ภาวะที่ไตทำงานผิดปกติ มีหลายชื่อเรียก เช่น ไตวาย ไตเสื่อม ไตทำงานลดลง แบ่งเป็น 2 ประเภทหลัก
+                        <p class="mb-4">ภาวะที่ไตทำงานผิดปกติ มีหลายชื่อเรียก เช่น ไตวาย ไตเสื่อม ไตทำงานลดลง แบ่งเป็น 2
+                            ประเภทหลัก
                             คือ 1.โรคไตเฉียบพลัน ซึ่งเกิดขึ้นภายในระยะเวลาไม่เกิน 3 เดือน มีโอกาสรักษาให้หายขาดได้ และ
                             2. โรคไตเรื้อรัง ซึ่งเกิดขึ้นในระยะเวลามากกว่า 3 เดือนขึ้นไป</p>
-                        <a class="btn" href="{{ url('/kidney') }}"><i class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
+                        <a class="btn" href="{{ url('/kidney') }}"><i
+                                class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>
             </div>
@@ -465,15 +476,15 @@
                                 <div class="col-12 col-sm-6">
                                     <div class="date" id="date" data-target-input="nearest">
                                         <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#date"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Choose Date" data-target="#date" data-toggle="datetimepicker"
+                                            style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="time" id="time" data-target-input="nearest">
                                         <input type="text" class="form-control border-0 datetimepicker-input"
-                                            placeholder="Choose Date" data-target="#time"
-                                            data-toggle="datetimepicker" style="height: 55px;">
+                                            placeholder="Choose Date" data-target="#time" data-toggle="datetimepicker"
+                                            style="height: 55px;">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -556,5 +567,4 @@
     <script src="{{ asset('lib/tempusdominus/js/moment.min.js') }}"></script>
     <script src="{{ asset('lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
     <script src="{{ asset('lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
-
 @endsection

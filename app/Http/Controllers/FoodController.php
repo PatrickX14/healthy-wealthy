@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Food;
 use App\Models\Disease;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class FoodController extends Controller
 {
@@ -25,6 +27,29 @@ class FoodController extends Controller
     {
         $diseases = Disease::all();
         return view('dashboardfoodupload', compact('diseases'));
+    }
+
+    public function indexSearch(Request $request)
+    {
+        $food = Food::all();
+        return view('search', compact('food'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        // $food = Food::where(function ($query) use ($search) {
+        //     $query->where('foodname', 'like', "%$search%")
+        //         ->orWhereHas('diseases->name', 'like', "%$search%");
+        // })->get();
+        $food = Food::where(function($query) use ($search){
+            $query->where('foodname', 'like', "%$search%")
+            ->orWhere('foodkcal', 'like', "%$search%");
+        })
+        ->orWhereHas('diseases', function($query) use ($search){
+            $query->where('name', 'like', "%$search%");
+        })->get();
+        return view('search', compact('food'));
     }
 
     /**
@@ -132,7 +157,7 @@ class FoodController extends Controller
             if ($request->has('picture')) {
                 $food->picture = $request->picture->getClientOriginalName();
                 $request->file('picture')->storeAs('image', $request->picture->getClientOriginalName(), 'public');
-            }else{
+            } else {
                 $food->picture = null;
             }
             $food->refer = $request->refer;

@@ -55,9 +55,11 @@
             <li>ลดอาหารที่มีไขมันสูง น้ำตาลสูง</li>
             <li>เข้ารับการตรวจสุขภาพตามที่คุณหมอกำหนด และตรวจสุขภาพอย่างละเอียด</li>
             <li>รับประทานยาตามที่คุณหมอกำหนด เพื่อรักษาโรคที่เป็น</li>
-            <li>หลีกเลี่ยงอาหารเสริมหรือยาที่ช่วยลดความอ้วน เพราะผู้สูงอายุอาจได้รับผลข้างเคียงอันตรายที่เกี่ยวข้องกับหัวใจ ลิ้นหัวใจ หลอดเลือด และปอด</li>
+            <li>หลีกเลี่ยงอาหารเสริมหรือยาที่ช่วยลดความอ้วน เพราะผู้สูงอายุอาจได้รับผลข้างเคียงอันตรายที่เกี่ยวข้องกับหัวใจ
+                ลิ้นหัวใจ หลอดเลือด และปอด</li>
         </ul>
-        <p>หากผู้สูงอายุเป็นโรคอ้วน อาจต้องเผชิญกับความวิตกกังวลและความเครียด ญาติหรือผู้ดูแลควรดูแลสุขภาพจิตของผู้สูงอายุอย่างใกล้ชิด</p>
+        <p>หากผู้สูงอายุเป็นโรคอ้วน อาจต้องเผชิญกับความวิตกกังวลและความเครียด
+            ญาติหรือผู้ดูแลควรดูแลสุขภาพจิตของผู้สูงอายุอย่างใกล้ชิด</p>
         <hr>
     </div>
     {{-- ไม่ต้องแก้ --}}
@@ -67,7 +69,7 @@
             @foreach ($foods as $food)
                 <div class="col d-flex justify-content-center">
                     <div class="card" style="width: 290px;">
-                        <a href="#">
+                        <a href="{{ asset('foodshow/' . $food->id) }}">
                             <img src="{{ asset('storage/image/' . $food->picture) }}" class="card-img-top"
                                 style="width: 100%; height:240px; object-fit: cover;">
                             <div class="card-body">
@@ -81,4 +83,23 @@
         </div>
     </div>
     {{-- ไม่ต้องแก้ --}}
+    <div class="container">
+        <h4>อาหารที่ควรหลีกเลี่ยง</h4>
+        <div class="row row-cols-1 row-cols-md-4">
+            @foreach ($inedibleFood as $food)
+                <div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 290px;">
+                        <a href="{{ asset('foodshow/' . $food->id) }}">
+                            <img src="{{ asset('storage/image/' . $food->picture) }}" class="card-img-top"
+                                style="width: 100%; height:240px; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text">{{ $food->foodname }}</p>
+                                <i class="fa-solid fa-fire">{{ $food->foodkcal }}</i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 @endsection

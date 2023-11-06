@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('role')->nullable();
+            $table->integer('age')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -26,6 +28,7 @@ return new class extends Migration
                     'name' => 'admin',
                     'email' => 'admin@local',
                     'password' => '$2y$10$F6/Zl.UwgHaTKsKSnpma3./zrLgn1BpOtD7Iqvzwem5JDlQOwOD7O',
+                    'role' => 'admin'
                 ]
             ]);
     }

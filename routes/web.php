@@ -8,6 +8,7 @@ use App\Models\Disease;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Food;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,22 @@ use App\Models\Food;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $elderUser = DB::table("users")->where("age", ">=", 60)->get();
+    $content = [
+        [
+            "title" => "อายุมากกว่า 60",
+            "content" => "ผู้สูงอายุ"
+        ],
+        [
+            "title" => "อายุน้อยกว่า 60",
+            "content" => "วัยกลางคน"
+        ]
+    ];
+    return view("index", compact("elderUser", "content"));
 });
 
 Route::get('/dashboard', function () {
-    $foodlist = Food::all();
+    $foodlist = Food::paginate(10);
     return view('dashboard', compact('foodlist'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -40,11 +52,14 @@ Route::get('/dashboardfoodshow/{id}', function (string $id) {
 // Route::get('/bllod_pressure3', [PageController::class, 'bllod_pressure3']);
 // Route::get('/obesity_food1', [PageController::class, 'obesity_food1']);
 // Route::get('/obesity_food2', [PageController::class, 'obesity_food']);
-Route::get('/calculator', [PageController::class, 'calculator']);
-Route::get('/nutrition', [PageController::class, 'nutrition']);
-Route::get('/diseaslist', [PageController::class, 'disease']);
 
-Route::controller(DiseaseController::class)->group(function(){
+Route::controller(PageController::class)->group(function () {
+    Route::get('/calculator', 'calculator');
+    Route::get('/nutrition', 'nutrition');
+    Route::get('/diseaslist', 'disease');
+});
+
+Route::controller(DiseaseController::class)->group(function () {
     Route::get('/obesity', 'obesity');
     Route::get('/diabetes', 'diabetes');
     Route::get('/hypertension', 'hypertension');
@@ -57,10 +72,13 @@ Route::controller(DiseaseController::class)->group(function(){
     Route::get('/gastritis', 'gastritis');
 });
 
-
-Route::get('/foodlist', [FoodController::class, 'index'])->name('food.show');
-Route::post('/foodupload', [FoodController::class, 'store']);
-Route::get('/foodshow/{id}', [FoodController::class, 'show']);
+Route::controller(FoodController::class)->group(function () {
+    Route::get('/foodlist', 'index')->name('food.show');
+    Route::post('/foodupload', 'store');
+    Route::get('/foodshow/{id}', 'show');
+    Route::get('/searchpage', 'indexsearch');
+    Route::get('/search', 'search');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

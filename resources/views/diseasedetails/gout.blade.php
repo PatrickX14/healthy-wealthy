@@ -38,14 +38,14 @@
     </div>
     {{-- ไม่ต้องแก้ --}}
     <div class="container">
-        <h4>อาหารที่เหมาะกับคนที่เป็นโรคเก๊าท์</h4>
+        <h4>อาหารที่เหมาะกับคนที่เป็นโรคอ้วน</h4>
         <div class="row row-cols-1 row-cols-md-4">
             @foreach ($foods as $food)
                 <div class="col d-flex justify-content-center">
                     <div class="card" style="width: 290px;">
-                        <a href="#">
-                            <img src="{{ asset('storage/img/' . $food->picture) }}" class="card-img-top"
-                                style="width: 100%; height:240px;">
+                        <a href="{{ asset('foodshow/' . $food->id) }}">
+                            <img src="{{ asset('storage/image/' . $food->picture) }}" class="card-img-top"
+                                style="width: 100%; height:240px; object-fit: cover;">
                             <div class="card-body">
                                 <p class="card-text">{{ $food->foodname }}</p>
                                 <i class="fa-solid fa-fire">{{ $food->foodkcal }}</i>
@@ -57,4 +57,23 @@
         </div>
     </div>
     {{-- ไม่ต้องแก้ --}}
+    <div class="container">
+        <h4>อาหารที่ควรหลีกเลี่ยง</h4>
+        <div class="row row-cols-1 row-cols-md-4">
+            @foreach ($inedibleFood as $food)
+                <div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 290px;">
+                        <a href="{{ asset('foodshow/' . $food->id) }}">
+                            <img src="{{ asset('storage/image/' . $food->picture) }}" class="card-img-top"
+                                style="width: 100%; height:240px; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text">{{ $food->foodname }}</p>
+                                <i class="fa-solid fa-fire">{{ $food->foodkcal }}</i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 @endsection

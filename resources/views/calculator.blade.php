@@ -19,13 +19,11 @@
             <div class="list-group">
                 <label for="gender">เพศ</label>
                 <label class="list-group-item d-flex gap-2">
-                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1"
-                        value="male" checked>
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios1" value="male">
                     <span>ผู้ชาย</span>
                 </label>
                 <label class="list-group-item d-flex gap-2">
-                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios"
-                        id="listGroupRadios2" value="female">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios2" value="female">
                     <span>ผู้หญิง</span>
                 </label>
             </div>

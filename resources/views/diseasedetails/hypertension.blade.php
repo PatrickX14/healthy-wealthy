@@ -1,6 +1,5 @@
 @extends('layouts.index')
 @section('content')
-https://hellokhunmor.com/%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%a0%e0%b8%b2%e0%b8%9e%e0%b8%ab%e0%b8%b1%e0%b8%a7%e0%b9%83%e0%b8%88/%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%94%e0%b8%b1%e0%b8%99%e0%b9%82%e0%b8%a5%e0%b8%ab%e0%b8%b4%e0%b8%95%e0%b8%aa%e0%b8%b9%e0%b8%87/%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%94%e0%b8%b1%e0%b8%99%e0%b9%82%e0%b8%a5%e0%b8%ab%e0%b8%b4%e0%b8%95%e0%b8%aa%e0%b8%b9%e0%b8%87-%e0%b9%82%e0%b8%a3%e0%b8%84%e0%b8%84%e0%b8%a7%e0%b8%b2%e0%b8%a1%e0%b8%94%e0%b8%b1%e0%b8%99%e0%b9%82%e0%b8%a5%e0%b8%ab%e0%b8%b4%e0%b8%95%e0%b8%aa%e0%b8%b9%e0%b8%87/
     <div class="text-center mt-5">
         <img src="{{ asset('img/1.jpg') }}" class="rounded" alt="...">
     </div>
@@ -50,14 +49,34 @@ https://hellokhunmor.com/%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%a0%e0%b8%b2%e0%b8%9e%
     </div>
     {{-- ไม่ต้องแก้ --}}
     <div class="container">
-        <h4>อาหารที่เหมาะกับคนที่เป็นโรคความดันโลหิตสูง</h4>
+        <h4>อาหารที่เหมาะกับคนที่เป็นโรคอ้วน</h4>
         <div class="row row-cols-1 row-cols-md-4">
             @foreach ($foods as $food)
                 <div class="col d-flex justify-content-center">
                     <div class="card" style="width: 290px;">
-                        <a href="#">
-                            <img src="{{ asset('storage/img/' . $food->picture) }}" class="card-img-top"
-                                style="width: 100%; height:240px;">
+                        <a href="{{ asset('foodshow/' . $food->id) }}">
+                            <img src="{{ asset('storage/image/' . $food->picture) }}" class="card-img-top"
+                                style="width: 100%; height:240px; object-fit: cover;">
+                            <div class="card-body">
+                                <p class="card-text">{{ $food->foodname }}</p>
+                                <i class="fa-solid fa-fire text-danger">{{ $food->foodkcal }}</i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    {{-- ไม่ต้องแก้ --}}
+    <div class="container">
+        <h4>อาหารที่ควรหลีกเลี่ยง</h4>
+        <div class="row row-cols-1 row-cols-md-4">
+            @foreach ($inedibleFood as $food)
+                <div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 290px;">
+                        <a href="{{ asset('foodshow/' . $food->id) }}">
+                            <img src="{{ asset('storage/image/' . $food->picture) }}" class="card-img-top"
+                                style="width: 100%; height:240px; object-fit: cover;">
                             <div class="card-body">
                                 <p class="card-text">{{ $food->foodname }}</p>
                                 <i class="fa-solid fa-fire">{{ $food->foodkcal }}</i>
@@ -68,5 +87,4 @@ https://hellokhunmor.com/%e0%b8%aa%e0%b8%b8%e0%b8%82%e0%b8%a0%e0%b8%b2%e0%b8%9e%
             @endforeach
         </div>
     </div>
-    {{-- ไม่ต้องแก้ --}}
 @endsection

@@ -46,8 +46,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <form class="w-25 me-3" role="search" style="width: 300px;">
-            <input type="search" class="form-control" placeholder="ค้นหา...." aria-label="Search">
+        <form class="w-25 me-3" role="search" style="width: 300px;" method="GET" action="/search">
+            <input type="search" class="form-control" placeholder="ค้นหา...." aria-label="Search" name="search">
         </form>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -66,8 +66,14 @@
                 </div>
             </div>
 
+            @if (Route::has('login'))
             <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
-                style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
+            style="background-color: #4db056;">Dashboard<i class="fa fa-arrow-right ms-3"></i></a>
+            @else
+            <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+            style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
+            @endif
+
         </div>
     </nav>
     <!-- Navbar End -->
