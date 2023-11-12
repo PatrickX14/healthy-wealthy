@@ -66,6 +66,11 @@ Route::get('/exercisedetails', function () {
     return view('exercise/exercisedetails');
 });
 
+
+
+Route::get('/searchpage', [FoodController::class, 'indexsearch']);
+Route::get('/search', [FoodController::class, 'Search']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::get('/foodupload', [FoodController::class, 'create']);

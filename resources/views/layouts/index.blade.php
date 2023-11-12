@@ -40,14 +40,15 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s"
         style="border-bottom: 1px black solid;">
         <a href="{{ url('/') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0" style="color: #4db056;"><i class="far fa-hospital me-3"></i>Stay Healthy</h1>
+            <h1 class="m-0" style="color: #4db056;"><img src="{{ asset('img/couple.png') }}"class="text-primary fs-4 "style="width: 42px" alt=""></i>Stay Healthy</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <form class="w-25 me-3" role="search" style="width: 300px;">
-            <input type="search" class="form-control" placeholder="ค้นหา...." aria-label="Search">
+
+        <form class="w-25 me-3" role="search" style="width: 300px;" method="GET" action="/search">
+            <input type="search" class="form-control" placeholder="ค้นหา...." aria-label="Search" name="search">
         </form>
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -71,21 +72,24 @@
     <!-- Navbar End -->
     @yield('content')
     <!-- Template Javascript -->
-    <div class="container-fluid bg-dark text-light footer mt-5  wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Orasa Hengchuan</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+    <footer>
+        <div class="container-fluid bg-dark text-light footer mt-5  wow fadeIn" data-wow-delay="0.1s" >
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Orasa Hengchuan</a>
+                        </div>
+                        {{-- <div class="col-md-6 text-center text-md-end">
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </footer>
+    <a class="lineLink" href="https://lin.ee/vzKDpan"><i class="fa-brands fa-line" style="color: #33cc28;"></i></a>
     <script src="https://kit.fontawesome.com/73c417b541.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="https://kit.fontawesome.com/73c417b541.js" crossorigin="anonymous"></script>

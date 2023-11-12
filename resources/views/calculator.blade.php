@@ -68,7 +68,7 @@
             <label for="age">อายุ</label>
             <input type="number" name="age" id="age" placeholder="ปี" max="100" min="0" class="form-control">
             <strong class="calculatorError" id="ageError">โปรดระบุอายุ(ปี)</strong>
-            <label for="output">Output</label>
+            <label for="output">calorie</label>
             <input type="number" id="result" value="0" class="form-control">
             <button class="btn btn-primary mt-3" type="button" id="calculateButton">คำนวน</button>
         </div>

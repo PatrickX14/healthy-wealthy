@@ -4,8 +4,8 @@ calculateButton.addEventListener("click", () => {
     const height = document.getElementById("height").value;
     const age = document.getElementById("age").value;
     const result = document.getElementById("result");
-    const maleSelect = document.getElementById('listGroupRadios1');
-    const femaleSelect = document.getElementById('listGroupRadios2');
+    const maleSelect = document.getElementById('listGroupRadios1').checked;
+    const femaleSelect = document.getElementById('listGroupRadios2').checked;
     let bmrWeight, bmrHeight, bmrAge, gender;
     if (weight === "") {
         const weightError = document.getElementById("weightError");
@@ -28,13 +28,14 @@ calculateButton.addEventListener("click", () => {
         const ageError = document.getElementById("ageError");
         ageError.style.display = "none";
     }
-    if (maleSelect.value === "male") {
+
+    if (femaleSelect) {
         bmrWeight = 9.6 * weight;
         bmrHeight = 1.8 * height;
         bmrAge = 4.7 * age;
         gender = 665;
     }
-    if (femaleSelect.value === "male") {
+    if (maleSelect) {
         bmrWeight = 13.7 * weight;
         bmrHeight = 5 * height;
         bmrAge = 6.8 * age;

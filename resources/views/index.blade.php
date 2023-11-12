@@ -9,6 +9,8 @@
     </div>
     <!-- Spinner End -->
 
+    <
+
 
     <!-- Topbar Start -->
     {{-- <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
@@ -46,6 +48,7 @@
     <div class="container-fluid header bg-primary p-0 mb-5">
         <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
             <div class="col-lg-6 p-5 wow fadeIn" data-wow-delay="0.1s">
+                {{-- <img src="{{ asset('img/line.png')}}" alt=""> --}}
                 <h1 class="display-4 text-white mb-5">สุขภาพที่ดีคือรากฐานของความสุข</h1>
                 <div class="row g-4">
                     <div class="col-sm-4">
@@ -56,14 +59,14 @@
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">1234</h2>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">68</h2>
                             <p class="text-light mb-0">เมนูอาหาร</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="border-start border-light ps-4">
-                            <h2 class="text-white mb-1" data-toggle="counter-up">12345</h2>
-                            <p class="text-light mb-0">การออกกำลังการ</p>
+                            <h2 class="text-white mb-1" data-toggle="counter-up">12</h2>
+                            <p class="text-light mb-0">การออกกำลังกาย</p>
                         </div>
                     </div>
                 </div>
@@ -269,7 +272,7 @@
                             สามารถเกิดขึ้นได้แบบเฉียบพลันในระยะเวลารวดเร็ว เป็นในระยะสั้น ๆ และหายภายใน 1-2 สัปดาห์
                             หรือมีอาการบ่อยครั้งเป็นระยะเวลานานจนเกิดการอักเสบเรื้อรัง ทำให้เกิดแผล
                             และเพิ่มความเสี่ยงในการเป็นโรคมะเร็งกระเพาะอาหารได้</p>
-                        <a class="btn" href="{{ url('/gout') }}"><i
+                        <a class="btn" href="{{ url('/gastritis') }}"><i
                                 class="fa fa-plus text-primary me-3"></i>อ่านต่อ</a>
                     </div>
                 </div>

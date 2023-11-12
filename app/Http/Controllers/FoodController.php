@@ -27,6 +27,29 @@ class FoodController extends Controller
         return view('dashboardfoodupload', compact('diseases'));
     }
 
+    public function indexSearch(Request $request)
+    {
+        $food = Food::all();
+        return view('search', compact('food'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        // $food = Food::where(function ($query) use ($search) {
+        //     $query->where('foodname', 'like', "%$search%")
+        //         ->orWhereHas('diseases->name', 'like', "%$search%");
+        // })->get();
+        $food = Food::where(function($query) use ($search){
+            $query->where('foodname', 'like', "%$search%")
+            ->orWhere('foodkcal', 'like', "%$search%");
+        })
+        ->orWhereHas('diseases', function($query) use ($search){
+            $query->where('name', 'like', "%$search%");
+        })->get();
+        return view('search', compact('food'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */
