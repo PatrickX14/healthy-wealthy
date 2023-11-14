@@ -29,7 +29,7 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
                     style="font-size: 24px;">
-                    <li><a href="{{ url('/')}}" class="nav-link px-2 link-secondary text-light">หน้าหลัก</a></li>
+                    <li><a href="{{ url('/') }}" class="nav-link px-2 link-secondary text-light">หน้าหลัก</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light link-secondary" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +49,7 @@
                         </ul>
                     </li>
                     <li><a class="nav-link text-light link-secondary" aria-disabled="true"
-                            href="{{url('/calculator')}}">แคลอรี่</a></li>
+                            href="{{ url('/calculator') }}">แคลอรี่</a></li>
                 </ul>
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -67,7 +67,7 @@
                             <ul class="dropdown-menu text-small" style="">
                                 <li><a class="dropdown-item" href="{{ url('/dashboard') }}">Dashboard</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/foodupload')}}">เพิ่มรายการ</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/foodupload') }}">เพิ่มรายการ</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>

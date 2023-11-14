@@ -66,12 +66,22 @@
                 </div>
             </div>
 
-            @if (Route::has('login'))
-            <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
-            style="background-color: #4db056;">Dashboard<i class="fa fa-arrow-right ms-3"></i></a>
+            {{-- @if (Route::has('login'))
+                <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                    style="background-color: #4db056;">Dashboard<i class="fa fa-arrow-right ms-3"></i></a>
             @else
-            <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
-            style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                    style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
+            @endif --}}
+
+            @if (Route::has('login'))
+                @auth
+                    <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                        style="background-color: #4db056;">Dashboard<i class="fa fa-arrow-right ms-3"></i></a>
+                @else
+                <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                    style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
+                @endauth
             @endif
 
         </div>

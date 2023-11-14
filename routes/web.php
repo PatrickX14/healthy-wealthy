@@ -23,17 +23,7 @@ use App\Models\User;
 
 Route::get('/', function () {
     $elderUser = DB::table("users")->where("age", ">=", 60)->get();
-    $content = [
-        [
-            "title" => "อายุมากกว่า 60",
-            "content" => "ผู้สูงอายุ"
-        ],
-        [
-            "title" => "อายุน้อยกว่า 60",
-            "content" => "วัยกลางคน"
-        ]
-    ];
-    return view("index", compact("elderUser", "content"));
+    return view("index", compact("elderUser"));
 });
 
 Route::get('/dashboard', function () {
