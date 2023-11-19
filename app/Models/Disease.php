@@ -11,6 +11,4 @@ class Disease extends Model
     protected $table = 'diseases';
     protected $primarykey = 'id';
     protected $fillable = ['name'];
-
-
 }

@@ -21,7 +21,6 @@
                         <td>{{ $food->foodname }}</td>
                         <td>{{ $food->foodkcal }} กิโลแคลอรี่</td>
                         <td>{{ $food->diseases->name }}</td>
-                        {{-- <td>{{ $food->disease->name }}</td> --}}
                         <td>
                             <a class="btn btn-primary" href="{{ url('foodshow/' . $food->id) }}">View</a>
                             {{-- @if (Route::has('login'))

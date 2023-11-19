@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Food;
 use App\Models\Disease;
+use App\Models\User;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -14,10 +15,11 @@ class FoodController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $id)
     {
         $foods = Food::all();
-        return view('food/foodshow')->with('foods', $foods);
+        $user = User::find($id);
+        return view('food/foodshow', compact('foods',"user"));
     }
 
     /**
@@ -38,18 +40,16 @@ class FoodController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        // $food = Food::where(function ($query) use ($search) {
-        //     $query->where('foodname', 'like', "%$search%")
-        //         ->orWhereHas('diseases->name', 'like', "%$search%");
-        // })->get();
         $food = Food::where(function($query) use ($search){
-            $query->where('foodname', 'like', "%$search%")
-            ->orWhere('foodkcal', 'like', "%$search%");
+
+        $query->where('foodname', 'like', "%$search%")
+        ->orWhere('foodkcal', 'like', "%$search%");
         })
         ->orWhereHas('diseases', function($query) use ($search){
             $query->where('name', 'like', "%$search%");
-        })->get();
-        return view('search', compact('food'));
+        })
+        ->get();
+        return view('search', compact('food', 'search'));
     }
 
     /**

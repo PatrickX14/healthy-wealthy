@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Food;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,15 +22,12 @@ use App\Models\User;
 |
 */
 
-Route::get('/', function () {
-    $elderUser = DB::table("users")->where("age", ">=", 60)->get();
-    return view("index", compact("elderUser"));
-});
+Route::get('/', [PageController::class, "index"])->name("index");
 
 Route::get('/dashboard', function () {
     $foodlist = Food::paginate(10);
     return view('dashboard', compact('foodlist'));
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'checkuserrole'])->name('admindashboard');
 
 Route::get('/dashboardfoodshow/{id}', function (string $id) {
     $foodlist = Food::find($id);
