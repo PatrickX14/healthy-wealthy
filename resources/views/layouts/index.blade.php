@@ -76,11 +76,19 @@
 
             @if (Route::has('login'))
                 @auth
-                    <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                    @if (Auth::user()->role === 'admin')
+                        <a href="{{ route('admindashboard') }}"
+                            class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                            style="background-color: #4db056;">Admin Dashboard<i class="fa fa-arrow-right ms-3"></i></a>
+                    @endif
+                    @if (Auth::user()->role === 'user')
+                    <a href="{{ route('userdashboard') }}"
+                        class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
                         style="background-color: #4db056;">Dashboard<i class="fa fa-arrow-right ms-3"></i></a>
+                    @endif
                 @else
-                <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
-                    style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
+                    <a href="{{ route('login') }}" class="btn rounded-0 py-4 px-lg-5 d-none d-lg-block text-light"
+                        style="background-color: #4db056;">เข้าสู่ระบบ<i class="fa fa-arrow-right ms-3"></i></a>
                 @endauth
             @endif
 

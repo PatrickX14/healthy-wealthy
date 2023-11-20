@@ -20,7 +20,7 @@ class CheckUserRole
             if ($user->role === "admin") {
                 return redirect()->route('admindashboard');
             } elseif ($user->role === "user") {
-                return redirect()->route("index")->with("roleError", "You're not admin");
+                return redirect()->route("userdashboard");
             }
         };
         return redirect()->route('login');

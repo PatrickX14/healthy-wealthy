@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Food;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,21 @@ Route::get('/', [PageController::class, "index"])->name("index");
 Route::get('/dashboard', function () {
     $foodlist = Food::paginate(10);
     return view('dashboard', compact('foodlist'));
-})->middleware(['auth', 'verified', 'checkuserrole'])->name('admindashboard');
+})->middleware(['auth', 'verified'])->name('admindashboard');
+
+Route::get('/userprofile', function(){
+
+    $user = Auth::user();
+    $name = $user->name;
+    $email = $user->email;
+    $gender = $user->gender;
+
+    $userBirthdate = Carbon::parse($user->birthdate);
+    $currentDate = Carbon::now();
+    $userAge = $userBirthdate->diffInYears($currentDate);
+
+    return view('userdashboard', compact('user', 'name', 'email', 'userAge', 'gender'));
+})->name('userdashboard');
 
 Route::get('/dashboardfoodshow/{id}', function (string $id) {
     $foodlist = Food::find($id);

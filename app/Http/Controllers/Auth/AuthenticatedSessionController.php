@@ -38,7 +38,6 @@ class AuthenticatedSessionController extends Controller
             'email.required' => 'โปรดระบุอีเมล',
             'password.required' => 'โปรดระบุรหัสผ่าน'
         ]);
-
         return redirect()->intended($previous_url);
     }
 
